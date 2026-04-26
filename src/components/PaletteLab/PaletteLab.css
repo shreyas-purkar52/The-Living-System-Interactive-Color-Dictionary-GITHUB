@@ -1,0 +1,132 @@
+.physics-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.physics-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.physics-header h2 { font-size: 3rem; margin-bottom: 1rem; }
+
+.blend-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.blend-toggle button {
+  background: transparent;
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blend-toggle button.active {
+  background: var(--text-primary);
+  color: var(--bg-color);
+}
+
+.black-hole-toggle {
+  border-color: #8A2BE2 !important;
+  color: #8A2BE2 !important;
+}
+.black-hole-toggle.active {
+  background: #8A2BE2 !important;
+  color: white !important;
+  box-shadow: 0 0 20px #8A2BE2;
+}
+
+.physics-workspace {
+  display: flex;
+  gap: 2rem;
+  height: 600px;
+}
+
+.spawner-panel {
+  width: 250px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.spawner-panel h3 { margin-bottom: 1.5rem; color: var(--accent-blue); }
+
+.spawner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: auto;
+}
+
+.spawn-btn {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.clear-btn {
+  background: transparent;
+  border: 1px solid var(--accent-magenta);
+  color: var(--accent-magenta);
+  padding: 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-btn:hover { background: var(--accent-magenta); color: white; }
+
+.physics-arena {
+  flex: 1;
+  border-radius: 24px;
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.physics-node {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: grab;
+  filter: blur(10px);
+}
+
+.physics-node:active { cursor: grabbing; }
+
+.empty-state {
+  font-size: 1.2rem;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.black-hole-node {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #000 0%, #300 50%, #8A2BE2 100%);
+  box-shadow: 0 0 50px #8A2BE2, inset 0 0 20px #000;
+  z-index: 50;
+  pointer-events: none;
+}

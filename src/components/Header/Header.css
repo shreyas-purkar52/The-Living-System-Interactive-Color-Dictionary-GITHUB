@@ -1,0 +1,108 @@
+.global-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.header-logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.05em;
+}
+
+.header-controls {
+  display: flex;
+  gap: 20px;
+  pointer-events: auto;
+  align-items: center;
+}
+
+.synesthesia-toggle {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.synesthesia-toggle.active {
+  background: var(--accent-magenta);
+  color: white;
+  border-color: var(--accent-magenta);
+  box-shadow: 0 0 15px var(--accent-magenta);
+}
+
+.chaos-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,0,0,0.5);
+  color: #ff0000;
+  padding: 8px 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  animation: pulse-red 2s infinite;
+  backdrop-filter: blur(10px);
+}
+
+.chaos-toggle.active {
+  background: #ff0000;
+  color: white;
+  animation: glitch-jitter 0.1s infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
+  50% { box-shadow: 0 0 0 10px rgba(255,0,0,0); }
+}
+
+.mode-switch {
+  display: flex;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 30px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.mode-switch button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.mode-switch button.active {
+  background: var(--text-primary);
+  color: var(--bg-color);
+}
+
+.theme-switch select {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  backdrop-filter: blur(10px);
+}

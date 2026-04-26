@@ -1,0 +1,112 @@
+.dna-section {
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dna-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.dna-header h2 { font-size: 3rem; margin-bottom: 1rem; }
+
+.mutate-btn {
+  background: transparent;
+  border: 1px solid var(--accent-blue);
+  color: var(--accent-blue);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.mutate-btn:hover:not(:disabled) {
+  background: var(--accent-blue);
+  color: white;
+}
+
+.mutate-btn:disabled {
+  border-color: #555;
+  color: #555;
+  cursor: not-allowed;
+}
+
+.dna-canvas {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.dna-network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.dna-node {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  transition: background-color 0.5s ease;
+}
+
+.dna-node.mutating {
+  animation: mutate-pulse 0.2s infinite alternate;
+}
+
+@keyframes mutate-pulse {
+  from { filter: hue-rotate(0deg) brightness(1); }
+  to { filter: hue-rotate(90deg) brightness(1.5); }
+}
+
+.node-pulse {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: -1;
+  animation: pulse 2s infinite;
+  transition: background-color 0.5s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.node-tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  backdrop-filter: blur(5px);
+}
+
+.dna-node:hover .node-tooltip {
+  opacity: 1;
+}

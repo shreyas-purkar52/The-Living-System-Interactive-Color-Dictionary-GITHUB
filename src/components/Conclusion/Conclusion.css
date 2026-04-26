@@ -1,0 +1,48 @@
+.conclusion-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--card-border);
+}
+
+.conclusion-content h2 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.personality-summary {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 3rem;
+  border-radius: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+  backdrop-filter: blur(20px);
+}
+
+.personality-summary h3 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.final-palette {
+  display: flex;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.final-swatch {
+  flex: 1;
+}
+
+.personality-summary p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,152 @@
+.material-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.material-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.material-header h2 { font-size: 3rem; margin-bottom: 1rem; }
+
+.material-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 4rem;
+  background: var(--card-bg);
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: 1px solid var(--card-border);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.material-color-picker {
+  -webkit-appearance: none;
+  border: none;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.material-color-picker::-webkit-color-swatch-wrapper { padding: 0; }
+.material-color-picker::-webkit-color-swatch { border: none; border-radius: 50%; }
+
+.hex-display { font-family: monospace; font-size: 1.2rem; font-weight: bold; }
+
+.material-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.material-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.material-preview-container {
+  height: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+/* Background stripe to demonstrate translucency */
+.preview-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #111,
+    #111 20px,
+    #333 20px,
+    #333 40px
+  );
+  z-index: 1;
+}
+
+.material-sphere {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+}
+
+/* 1. GLASSMORPHISM */
+.mat-glass {
+  background: var(--base-color);
+  opacity: 0.6;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(255,255,255,0.3);
+  box-shadow: 
+    inset 0 0 20px rgba(255,255,255,0.5),
+    0 20px 40px rgba(0,0,0,0.5);
+}
+.mat-glass::after {
+  content: '';
+  position: absolute;
+  top: 10%; left: 10%;
+  width: 30%; height: 30%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+}
+
+/* 2. BRUSHED METAL */
+.mat-metal {
+  background: var(--base-color);
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.1) 0%,
+      rgba(255,255,255,0.1) 2%,
+      rgba(0,0,0,0.1) 2%,
+      rgba(0,0,0,0.1) 4%
+    ),
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4) 0%, rgba(0,0,0,0.8) 100%);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 
+    inset 0 -10px 20px rgba(0,0,0,0.5),
+    0 10px 20px rgba(0,0,0,0.5);
+  filter: contrast(1.2) drop-shadow(0 15px 15px rgba(0,0,0,0.7));
+}
+
+/* 3. MATTE FABRIC */
+.mat-fabric {
+  background: var(--base-color);
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.15"/%3E%3C/svg%3E');
+  box-shadow: 
+    inset -10px -10px 30px rgba(0,0,0,0.6),
+    0 5px 15px rgba(0,0,0,0.4);
+  /* Very soft edges */
+}
+
+.material-info {
+  padding: 2rem;
+}
+
+.material-info h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.material-info p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}

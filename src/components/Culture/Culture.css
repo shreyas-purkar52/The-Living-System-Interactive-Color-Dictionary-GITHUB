@@ -1,0 +1,107 @@
+.culture-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.culture-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.culture-header h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.culture-header p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.culture-block {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.culture-block h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.culture-modal {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: var(--bg-color);
+  width: 100%;
+  max-width: 600px;
+  padding: 3rem;
+  border-radius: 24px;
+  border-top: 5px solid;
+  position: relative;
+}
+
+.modal-content h3 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-group {
+  margin-bottom: 1.5rem;
+}
+
+.info-group h4 {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.info-group p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.highlight-india {
+  background: rgba(255, 153, 51, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #FF9933; /* Indian Saffron */
+  margin-top: 2rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+}

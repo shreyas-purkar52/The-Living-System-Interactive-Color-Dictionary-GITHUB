@@ -1,0 +1,14 @@
+.cursor-blob {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform-origin: center;
+}
+
+/* Allow default cursor globally, let the blob be a decorative trail */
+body, a, button, input, textarea, select {
+  cursor: auto;
+}

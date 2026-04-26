@@ -1,0 +1,132 @@
+.dictionary-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dictionary-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dictionary-header h2 { font-size: 3rem; margin-bottom: 1rem; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.dictionary-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.dictionary-card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.card-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.dictionary-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dictionary-card p {
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: var(--bg-color);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  width: 100%; max-width: 800px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-cinematic {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+/* Infinite Mirror CSS */
+.mirror-container {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: mirror-spin 10s infinite linear;
+}
+
+.mirror-layer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+@keyframes mirror-spin {
+  from { transform: rotateY(0deg) rotateX(20deg); }
+  to { transform: rotateY(360deg) rotateX(20deg); }
+}
+
+.cinematic-placeholder {
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+.modal-text {
+  padding: 3rem;
+}
+
+.modal-text h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.modal-text p { font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6; }
