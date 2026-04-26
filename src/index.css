@@ -36,6 +36,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+  overflow-x: hidden;
   min-height: 100vh;
   background-color: var(--bg-color);
   color: var(--text-primary);
@@ -129,4 +130,10 @@ body.era-future * {
 }
 body.era-future {
   background: linear-gradient(135deg, #050505 0%, #1a0033 100%);
+}
+
+@media (max-width: 1024px) {
+  section {
+    padding: 80px 20px !important;
+  }
 }

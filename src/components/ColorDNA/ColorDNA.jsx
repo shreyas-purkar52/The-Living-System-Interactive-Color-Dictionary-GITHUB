@@ -62,7 +62,7 @@ const ColorDNA = () => {
       </div>
 
       <div className="dna-canvas">
-        <svg className="dna-network" width="600" height="400">
+        <svg className="dna-network" width="100%" height="100%" viewBox="0 0 600 400">
           <motion.line 
             x1={nodes[0].x} y1={nodes[0].y} 
             x2={nodes[1].x} y2={nodes[1].y} 
@@ -95,8 +95,8 @@ const ColorDNA = () => {
             className={`dna-node ${isMutating ? 'mutating' : ''}`}
             style={{ 
               backgroundColor: node.color,
-              left: node.x - 30,
-              top: node.y - 30
+              left: `calc(${(node.x / 600) * 100}% - 30px)`,
+              top: `calc(${(node.y / 400) * 100}% - 30px)`
             }}
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}

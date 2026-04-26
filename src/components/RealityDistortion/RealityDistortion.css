@@ -172,3 +172,32 @@
 .checker-illusion {
   flex: 1;
 }
+
+@media (max-width: 1024px) {
+  .illusion-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .afterimage-container {
+    flex-direction: column;
+  }
+  .contrast-arena, .afterimage-arena, .generator-arena {
+    min-height: 300px;
+  }
+  .reality-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .inner-square {
+    width: 60px;
+    height: 60px;
+  }
+  .generator-arena {
+    flex-direction: column;
+  }
+  .vibrating-edges {
+    min-height: 150px;
+  }
+}

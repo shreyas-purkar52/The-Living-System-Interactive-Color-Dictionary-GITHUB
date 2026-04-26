@@ -14,7 +14,7 @@ import ChallengeMode from './components/QuizEngine/QuizEngine'
 import DesignSimulator from './components/DesignSimulator/DesignSimulator'
 import Chameleon from './components/Chameleon/Chameleon'
 import MaterialSimulator from './components/MaterialSimulator/MaterialSimulator'
-import InfiniteZoom from './components/InfiniteZoom/InfiniteZoom'
+
 import RealityControl from './components/RealityControl/RealityControl'
 import Conclusion from './components/Conclusion/Conclusion'
 
@@ -41,7 +41,7 @@ const MainContent = () => {
           <Chameleon />
           <MaterialSimulator />
           <PhysicsPlayground />
-          <InfiniteZoom />
+
           <RealityDistortion />
           <DesignSimulator />
           <ColorMap />

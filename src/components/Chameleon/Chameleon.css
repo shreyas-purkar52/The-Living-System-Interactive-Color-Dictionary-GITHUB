@@ -140,3 +140,16 @@
   border: 2px dashed var(--card-border);
   border-radius: 16px;
 }
+
+@media (max-width: 1024px) {
+  .chameleon-workspace {
+    flex-direction: column;
+    height: auto;
+  }
+  .camera-feed {
+    min-height: 300px;
+  }
+  .chameleon-header h2 {
+    font-size: 2rem;
+  }
+}

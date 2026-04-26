@@ -42,8 +42,10 @@
 
 .dna-canvas {
   position: relative;
-  width: 600px;
-  height: 400px;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 600 / 400;
+  height: auto;
   margin: 0 auto;
 }
 

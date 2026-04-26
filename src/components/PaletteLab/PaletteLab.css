@@ -130,3 +130,19 @@
   z-index: 50;
   pointer-events: none;
 }
+
+@media (max-width: 1024px) {
+  .physics-workspace {
+    flex-direction: column;
+    height: auto;
+  }
+  .spawner-panel {
+    width: 100%;
+  }
+  .physics-arena {
+    min-height: 400px;
+  }
+  .physics-header h2 {
+    font-size: 2rem;
+  }
+}

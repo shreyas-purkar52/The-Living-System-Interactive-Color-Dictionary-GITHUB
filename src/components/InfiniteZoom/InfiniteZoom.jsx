@@ -11,14 +11,11 @@ const InfiniteZoom = () => {
     offset: ["start start", "end end"]
   });
   
-  // Transform scale based on scroll inside this section (capped at 150 to prevent browser render limits)
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 150]);
+  // Transform scale based on scroll inside this section (capped at 5 since viewport is 100vw, to prevent GPU crash)
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 5]);
   
-  // Opacities for different zoom layers
-  const layer1Opacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]); // Solid Color
-  const layer2Opacity = useTransform(scrollYProgress, [0.1, 0.2, 0.4, 0.5], [0, 1, 1, 0]); // RGB Pixels
-  const layer3Opacity = useTransform(scrollYProgress, [0.4, 0.5, 0.7, 0.8], [0, 1, 1, 0]); // Noise
-  const layer4Opacity = useTransform(scrollYProgress, [0.7, 0.8, 1], [0, 1, 1]); // Galaxy
+  const layer1Opacity = useTransform(scrollYProgress, [0, 0.15, 0.3], [1, 1, 0]); // Solid Color
+  const layer2Opacity = useTransform(scrollYProgress, [0, 1], [1, 1]); // Keep RGB visible entire time
 
   const targetColor = personalityColors[0] || '#3A86FF';
 
@@ -44,21 +41,6 @@ const InfiniteZoom = () => {
             style={{ opacity: layer2Opacity }}
           >
             <div className="rgb-stripes" />
-          </motion.div>
-
-          {/* Layer 3: Visual Perception Noise */}
-          <motion.div 
-            className="zoom-layer layer-noise"
-            style={{ opacity: layer3Opacity }}
-          />
-
-          {/* Layer 4: Complementary Galaxy */}
-          <motion.div 
-            className="zoom-layer layer-galaxy"
-            style={{ opacity: layer4Opacity }}
-          >
-            <div className="galaxy-core" style={{ backgroundColor: personalityColors[1] || '#FFBE0B' }} />
-            <div className="galaxy-dust" style={{ backgroundColor: personalityColors[2] || '#FF006E' }} />
           </motion.div>
 
         </motion.div>

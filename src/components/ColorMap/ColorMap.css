@@ -92,3 +92,16 @@
   color: var(--text-secondary);
   line-height: 1.4;
 }
+
+@media (max-width: 1024px) {
+  .map-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .world-svg {
+    min-width: 800px;
+  }
+  .map-header h2 {
+    font-size: 2rem;
+  }
+}
